@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Room</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="house" id="h"> 
+        <div class="h-lights">
+          <div class="h-light"></div>
+          <div class="h-light"></div>
+          <div class="h-light"></div>
+          <div class="h-light"></div>
+          <div class="h-light"></div>
+          <div class="h-light"></div>
+        </div>
+        <div class="h-shadow"></div>
+        <div class="lantai">
+          <div class="lantai__front face"> </div>
+          <div class="lantai__back face"> </div>
+          <div class="lantai__right face"> </div>
+          <div class="lantai__left face"> </div>
+          <div class="lantai__top face"> 
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+          </div>
+          <div class="lantai__bottom face"> </div>
+        </div>
+        <div class="lantai-r">
+          <div class="lantai-r__front face"> </div>
+          <div class="lantai-r__back face"> </div>
+          <div class="lantai-r__right face"> </div>
+          <div class="lantai-r__left face"> </div>
+          <div class="lantai-r__top face"> </div>
+          <div class="lantai-r__bottom face"> </div>
+        </div>
+        <div class="lantai-l">
+          <div class="lantai-l__front face"> </div>
+          <div class="lantai-l__back face"> </div>
+          <div class="lantai-l__right face"> </div>
+          <div class="lantai-l__left face"> </div>
+          <div class="lantai-l__top face"> </div>
+          <div class="lantai-l__bottom face"> </div>
+        </div>
+        <div class="dinding-l">
+          <div class="dinding-l__front face"> </div>
+          <div class="dinding-l__back face"> </div>
+          <div class="dinding-l__right face"> </div>
+          <div class="dinding-l__left face"> </div>
+          <div class="dinding-l__top face"> </div>
+          <div class="dinding-l__bottom face"> </div>
+          <div class="dindingl__ml face"> </div>
+          <div class="dindingl__mr face"> </div>
+          <div class="dindingl__mf face"> </div>
+          <div class="dindingl__ll face"> </div>
+          <div class="dindingl__lr face"> </div>
+          <div class="dindingl__lf face"> </div>
+        </div>
+        <div class="dinding-l2">
+          <div class="dinding-l2__front face"> </div>
+          <div class="dinding-l2__back face"> </div>
+          <div class="dinding-l2__right face"> </div>
+          <div class="dinding-l2__left face"> </div>
+          <div class="dinding-l2__top face"> </div>
+          <div class="dinding-l2__bottom face"> </div>
+        </div>
+        <div class="dinding-r">
+          <div class="dinding-r__front face"> </div>
+          <div class="dinding-r__back face"> </div>
+          <div class="dinding-r__right face"> </div>
+          <div class="dinding-r__left face"> </div>
+          <div class="dinding-r__top face"> </div>
+          <div class="dinding-r__bottom face"> </div>
+        </div>
+        <div class="dinding-r2">
+          <div class="dinding-r2__front face"> </div>
+          <div class="dinding-r2__back face"> </div>
+          <div class="dinding-r2__right face"> </div>
+          <div class="dinding-r2__left face"> </div>
+          <div class="dinding-r2__top face"> </div>
+          <div class="dinding-r2__bottom face"> </div>
+        </div>
+        <div class="pintu-c">
+          <div class="pintu">
+            <div class="pintu__front face"> </div>
+            <div class="pintu__back face"> </div>
+            <div class="pintu__right face"> </div>
+            <div class="pintu__left face"> </div>
+            <div class="pintu__top face"> </div>
+            <div class="pintu__bottom face"> </div>
+          </div>
+          <div class="pintu-l">
+            <div class="pintu-l__front face"> </div>
+            <div class="pintu-l__back face"> </div>
+            <div class="pintu-l__right face"> </div>
+            <div class="pintu-l__left face"> </div>
+            <div class="pintu-l__top face"> </div>
+            <div class="pintu-l__bottom face"> </div>
+          </div>
+          <div class="pintu-r">
+            <div class="pintu-r__front face"> </div>
+            <div class="pintu-r__back face"> </div>
+            <div class="pintu-r__right face"> </div>
+            <div class="pintu-r__left face"> </div>
+            <div class="pintu-r__top face"> </div>
+            <div class="pintu-r__bottom face"> </div>
+          </div>
+          <div class="pintu-t">
+            <div class="pintu-t__front face"> </div>
+            <div class="pintu-t__back face"> </div>
+            <div class="pintu-t__right face"> </div>
+            <div class="pintu-t__left face"> </div>
+            <div class="pintu-t__top face"> </div>
+            <div class="pintu-t__bottom face"> </div>
+          </div>
+        </div>
+        <div class="poster-l">
+          <div class="poster-l__front face"> </div>
+          <div class="poster-l__back face"> </div>
+          <div class="poster-l__right face"> </div>
+          <div class="poster-l__left face"> </div>
+          <div class="poster-l__top face"> </div>
+          <div class="poster-l__bottom face"> </div>
+        </div>
+        <div class="poster-r">
+          <div class="poster-r__front face"> </div>
+          <div class="poster-r__back face"> </div>
+          <div class="poster-r__right face"> </div>
+          <div class="poster-r__left face"> </div>
+          <div class="poster-r__top face"> </div>
+          <div class="poster-r__bottom face"> </div>
+        </div>
+        <div class="novel-s"> 
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+          <div class="novel">
+            <div class="novel__front face"> </div>
+            <div class="novel__back face"> </div>
+            <div class="novel__right face"> </div>
+            <div class="novel__left face"> </div>
+            <div class="novel__top face"> </div>
+            <div class="novel__bottom face"> </div>
+          </div>
+        </div>
+        <div class="fotos"> 
+          <div class="foto">
+            <div class="foto__front face"> </div>
+            <div class="foto__back face"> </div>
+            <div class="foto__right face"> </div>
+            <div class="foto__left face"> </div>
+            <div class="foto__top face"> </div>
+            <div class="foto__bottom face"> </div>
+          </div>
+          <div class="foto">
+            <div class="foto__front face"> </div>
+            <div class="foto__back face"> </div>
+            <div class="foto__right face"> </div>
+            <div class="foto__left face"> </div>
+            <div class="foto__top face"> </div>
+            <div class="foto__bottom face"> </div>
+          </div>
+        </div>
+        <div class="dadu-s"> 
+          <div class="dadu">
+            <div class="dadu__front face"> </div>
+            <div class="dadu__back face"> </div>
+            <div class="dadu__right face"> </div>
+            <div class="dadu__left face"> </div>
+            <div class="dadu__top face"> </div>
+            <div class="dadu__bottom face"> </div>
+          </div>
+          <div class="dadu">
+            <div class="dadu__front face"> </div>
+            <div class="dadu__back face"> </div>
+            <div class="dadu__right face"> </div>
+            <div class="dadu__left face"> </div>
+            <div class="dadu__top face"> </div>
+            <div class="dadu__bottom face"> </div>
+          </div>
+        </div>
+        <div class="tv">
+          <div class="tv__front face"> </div>
+          <div class="tv__back face"> </div>
+          <div class="tv__right face"> </div>
+          <div class="tv__left face"> </div>
+          <div class="tv__top face"> </div>
+          <div class="tv__bottom face"> </div>
+        </div>
+        <div class="raktv-t">
+          <div class="raktv-t__front face"> </div>
+          <div class="raktv-t__back face"> </div>
+          <div class="raktv-t__right face"> </div>
+          <div class="raktv-t__left face"> </div>
+          <div class="raktv-t__top face"> </div>
+          <div class="raktv-t__bottom face"> </div>
+        </div>
+        <div class="raktv-b">
+          <div class="raktv-b__front face"> </div>
+          <div class="raktv-b__back face"> </div>
+          <div class="raktv-b__right face"> </div>
+          <div class="raktv-b__left face"> </div>
+          <div class="raktv-b__top face"> </div>
+          <div class="raktv-b__bottom face"> </div>
+        </div>
+        <div class="raktv-m">
+          <div class="raktv-m__front face"> </div>
+          <div class="raktv-m__back face"> </div>
+          <div class="raktv-m__right face"> </div>
+          <div class="raktv-m__left face"> </div>
+          <div class="raktv-m__top face"> </div>
+          <div class="raktv-m__bottom face"> </div>
+        </div>
+        <div class="raktv-l">
+          <div class="raktv-l__front face"> </div>
+          <div class="raktv-l__back face"> </div>
+          <div class="raktv-l__right face"> </div>
+          <div class="raktv-l__left face"> </div>
+          <div class="raktv-l__top face"> </div>
+          <div class="raktv-l__bottom face"> </div>
+        </div>
+        <div class="raktv-r">
+          <div class="raktv-r__front face"> </div>
+          <div class="raktv-r__back face"> </div>
+          <div class="raktv-r__right face"> </div>
+          <div class="raktv-r__left face"> </div>
+          <div class="raktv-r__top face"> </div>
+          <div class="raktv-r__bottom face"> </div>
+        </div>
+        <div class="speaker-l">
+          <div class="speaker-l__front face"> </div>
+          <div class="speaker-l__back face"> </div>
+          <div class="speaker-l__right face"> </div>
+          <div class="speaker-l__left face"> </div>
+          <div class="speaker-l__top face"> </div>
+          <div class="speaker-l__bottom face"> </div>
+        </div>
+        <div class="speaker-r">
+          <div class="speaker-r__front face"> </div>
+          <div class="speaker-r__back face"> </div>
+          <div class="speaker-r__right face"> </div>
+          <div class="speaker-r__left face"> </div>
+          <div class="speaker-r__top face"> </div>
+          <div class="speaker-r__bottom face"> </div>
+        </div>
+        <div class="wallpaper">
+          <div class="wallpaper__front face"> </div>
+          <div class="wallpaper__back face"> </div>
+          <div class="wallpaper__right face"> </div>
+          <div class="wallpaper__left face"> </div>
+          <div class="wallpaper__top face"> </div>
+          <div class="wallpaper__bottom face"> </div>
+        </div>
+        <div class="sofa-c">
+          <div class="sofa-b">
+            <div class="sofa-b__front face"> </div>
+            <div class="sofa-b__back face"> </div>
+            <div class="sofa-b__right face"> </div>
+            <div class="sofa-b__left face"> </div>
+            <div class="sofa-b__top face"> </div>
+            <div class="sofa-b__bottom face"> </div>
+          </div>
+          <div class="sofa-t">
+            <div class="sofa-t__front face"> </div>
+            <div class="sofa-t__back face"> </div>
+            <div class="sofa-t__right face"> </div>
+            <div class="sofa-t__left face"> </div>
+            <div class="sofa-t__top face"> </div>
+            <div class="sofa-t__bottom face"> </div>
+          </div>
+          <div class="sofa-l">
+            <div class="sofa-l__front face"> </div>
+            <div class="sofa-l__back face"> </div>
+            <div class="sofa-l__right face"> </div>
+            <div class="sofa-l__left face"> </div>
+            <div class="sofa-l__top face"> </div>
+            <div class="sofa-l__bottom face"> </div>
+          </div>
+          <div class="sofa-r">
+            <div class="sofa-r__front face"> </div>
+            <div class="sofa-r__back face"> </div>
+            <div class="sofa-r__right face"> </div>
+            <div class="sofa-r__left face"> </div>
+            <div class="sofa-r__top face"> </div>
+            <div class="sofa-r__bottom face"> </div>
+          </div>
+          <div class="sofa-ar">
+            <div class="sofa-ar__front face"> </div>
+            <div class="sofa-ar__back face"> </div>
+            <div class="sofa-ar__right face"> </div>
+            <div class="sofa-ar__left face"> </div>
+            <div class="sofa-ar__top face"> </div>
+            <div class="sofa-ar__bottom face"> </div>
+          </div>
+          <div class="sofa-al">
+            <div class="sofa-al__front face"> </div>
+            <div class="sofa-al__back face"> </div>
+            <div class="sofa-al__right face"> </div>
+            <div class="sofa-al__left face"> </div>
+            <div class="sofa-al__top face"> </div>
+          </div>
+        </div>
+        <div class="meja-c">
+          <div class="meja">
+            <div class="meja__front face"> </div>
+            <div class="meja__back face"> </div>
+            <div class="meja__right face"> </div>
+            <div class="meja__left face"> </div>
+            <div class="meja__top face"> </div>
+            <div class="meja__bottom face"> </div>
+          </div>
+          <div class="meja-p">
+            <div class="meja-p__front face"> </div>
+            <div class="meja-p__back face"> </div>
+            <div class="meja-p__right face"> </div>
+            <div class="meja-p__left face"> </div>
+            <div class="meja-p__top face"> </div>
+            <div class="meja-p__bottom face"> </div>
+          </div>
+          <div class="meja-p">
+            <div class="meja-p__front face"> </div>
+            <div class="meja-p__back face"> </div>
+            <div class="meja-p__right face"> </div>
+            <div class="meja-p__left face"> </div>
+            <div class="meja-p__top face"> </div>
+            <div class="meja-p__bottom face"> </div>
+          </div>
+          <div class="meja-p">
+            <div class="meja-p__front face"> </div>
+            <div class="meja-p__back face"> </div>
+            <div class="meja-p__right face"> </div>
+            <div class="meja-p__left face"> </div>
+            <div class="meja-p__top face"> </div>
+            <div class="meja-p__bottom face"> </div>
+          </div>
+          <div class="meja-p">
+            <div class="meja-p__front face"> </div>
+            <div class="meja-p__back face"> </div>
+            <div class="meja-p__right face"> </div>
+            <div class="meja-p__left face"> </div>
+            <div class="meja-p__top face"> </div>
+            <div class="meja-p__bottom face"> </div>
+          </div>
+          <div class="meja-shadow"></div>
+        </div>
+        <div class="tablet">
+          <div class="tablet__front face"> </div>
+          <div class="tablet__back face"> </div>
+          <div class="tablet__right face"> </div>
+          <div class="tablet__left face"> </div>
+          <div class="tablet__top face"> </div>
+          <div class="tablet__bottom face">    </div>
+        </div>
+        <div class="lemari">
+          <div class="lemari__front face"> </div>
+          <div class="lemari__back face"> </div>
+          <div class="lemari__right face"> </div>
+          <div class="lemari__left face"> </div>
+          <div class="lemari__top face"> </div>
+          <div class="lemari__bottom face"> </div>
+          <div class="lemari__tiangl face"> </div>
+          <div class="lemari__tiangr face"> </div>
+          <div class="lemari__tiangml face"> </div>
+          <div class="lemari__tiangmll face"> </div>
+          <div class="lemari__tiangmr face"> </div>
+          <div class="lemari__tiangmrr face"> </div>
+          <div class="lemari__tiangmlb face"> </div>
+          <div class="lemari__tiangmrb face"> </div>
+        </div>
+        <div class="rak-t">
+          <div class="rak-t__front face"> </div>
+          <div class="rak-t__back face"> </div>
+          <div class="rak-t__right face"> </div>
+          <div class="rak-t__left face"> </div>
+          <div class="rak-t__top face"> </div>
+          <div class="rak-t__bottom face"> </div>
+        </div>
+        <div class="rak-b">
+          <div class="rak-b__front face"> </div>
+          <div class="rak-b__back face"> </div>
+          <div class="rak-b__right face"> </div>
+          <div class="rak-b__left face"> </div>
+          <div class="rak-b__top face"> </div>
+          <div class="rak-b__bottom face"> </div>
+        </div>
+        <div class="rak-m">
+          <div class="rak-m__front face"> </div>
+          <div class="rak-m__back face"> </div>
+          <div class="rak-m__right face"> </div>
+          <div class="rak-m__left face"> </div>
+          <div class="rak-m__top face"> </div>
+          <div class="rak-m__bottom face"> </div>
+        </div>
+        <div class="pajangan-t"> 
+          <div class="pajangan">
+            <div class="pajangan__front face"> </div>
+            <div class="pajangan__back face"> </div>
+            <div class="pajangan__right face"> </div>
+            <div class="pajangan__left face"> </div>
+            <div class="pajangan__top face"> </div>
+            <div class="pajangan__bottom face"> </div>
+          </div>
+          <div class="pajangan-l">
+            <div class="pajangan-l__front face"> </div>
+            <div class="pajangan-l__back face"> </div>
+            <div class="pajangan-l__right face"> </div>
+            <div class="pajangan-l__left face"> </div>
+            <div class="pajangan-l__top face"> </div>
+            <div class="pajangan-l__bottom face"> </div>
+          </div>
+          <div class="pajangan-body">
+            <div class="pajangan-body__front face"> </div>
+            <div class="pajangan-body__back face"> </div>
+            <div class="pajangan-body__right face"> </div>
+            <div class="pajangan-body__left face"> </div>
+            <div class="pajangan-body__top face"> </div>
+            <div class="pajangan-body__bottom face"> </div>
+          </div>
+          <div class="pajangan-foot">
+            <div class="pajangan-foot__front face"> </div>
+            <div class="pajangan-foot__back face"> </div>
+            <div class="pajangan-foot__right face"> </div>
+            <div class="pajangan-foot__left face"> </div>
+            <div class="pajangan-foot__top face"> </div>
+            <div class="pajangan-foot__bottom face"> </div>
+          </div>
+          <div class="pajangan-handl">
+            <div class="pajangan-handl__front face"> </div>
+            <div class="pajangan-handl__back face"> </div>
+            <div class="pajangan-handl__right face"> </div>
+            <div class="pajangan-handl__left face"> </div>
+            <div class="pajangan-handl__top face"> </div>
+            <div class="pajangan-handl__bottom face"> </div>
+          </div>
+          <div class="pajangan-handr">
+            <div class="pajangan-handr__front face"> </div>
+            <div class="pajangan-handr__back face"> </div>
+            <div class="pajangan-handr__right face"> </div>
+            <div class="pajangan-handr__left face"> </div>
+            <div class="pajangan-handr__top face"> </div>
+            <div class="pajangan-handr__bottom face"> </div>
+          </div>
+        </div>
+        <div class="pajangan-m"> 
+          <div class="pajangan">
+            <div class="pajangan__front face"> </div>
+            <div class="pajangan__back face"> </div>
+            <div class="pajangan__right face"> </div>
+            <div class="pajangan__left face"> </div>
+            <div class="pajangan__top face"> </div>
+            <div class="pajangan__bottom face"> </div>
+          </div>
+          <div class="pajangan-l">
+            <div class="pajangan-l__front face"> </div>
+            <div class="pajangan-l__back face"> </div>
+            <div class="pajangan-l__right face"> </div>
+            <div class="pajangan-l__left face"> </div>
+            <div class="pajangan-l__top face"> </div>
+            <div class="pajangan-l__bottom face"> </div>
+          </div>
+          <div class="pajangan-body">
+            <div class="pajangan-body__front face"> </div>
+            <div class="pajangan-body__back face"> </div>
+            <div class="pajangan-body__right face"> </div>
+            <div class="pajangan-body__left face"> </div>
+            <div class="pajangan-body__top face"> </div>
+            <div class="pajangan-body__bottom face"> </div>
+          </div>
+          <div class="pajangan-foot">
+            <div class="pajangan-foot__front face"> </div>
+            <div class="pajangan-foot__back face"> </div>
+            <div class="pajangan-foot__right face"> </div>
+            <div class="pajangan-foot__left face"> </div>
+            <div class="pajangan-foot__top face"> </div>
+            <div class="pajangan-foot__bottom face"> </div>
+          </div>
+          <div class="pajangan-handl">
+            <div class="pajangan-handl__front face"> </div>
+            <div class="pajangan-handl__back face"> </div>
+            <div class="pajangan-handl__right face"> </div>
+            <div class="pajangan-handl__left face"> </div>
+            <div class="pajangan-handl__top face"> </div>
+            <div class="pajangan-handl__bottom face"> </div>
+          </div>
+          <div class="pajangan-handr">
+            <div class="pajangan-handr__front face"> </div>
+            <div class="pajangan-handr__back face"> </div>
+            <div class="pajangan-handr__right face"> </div>
+            <div class="pajangan-handr__left face"> </div>
+            <div class="pajangan-handr__top face"> </div>
+            <div class="pajangan-handr__bottom face"> </div>
+          </div>
+        </div>
+        <div class="pajangan-b"> 
+          <div class="pajangan">
+            <div class="pajangan__front face"> </div>
+            <div class="pajangan__back face"> </div>
+            <div class="pajangan__right face"> </div>
+            <div class="pajangan__left face"> </div>
+            <div class="pajangan__top face"> </div>
+            <div class="pajangan__bottom face"> </div>
+          </div>
+          <div class="pajangan-l">
+            <div class="pajangan-l__front face"> </div>
+            <div class="pajangan-l__back face"> </div>
+            <div class="pajangan-l__right face"> </div>
+            <div class="pajangan-l__left face"> </div>
+            <div class="pajangan-l__top face"> </div>
+            <div class="pajangan-l__bottom face"> </div>
+          </div>
+          <div class="pajangan-body">
+            <div class="pajangan-body__front face"> </div>
+            <div class="pajangan-body__back face"> </div>
+            <div class="pajangan-body__right face"> </div>
+            <div class="pajangan-body__left face"> </div>
+            <div class="pajangan-body__top face"> </div>
+            <div class="pajangan-body__bottom face"> </div>
+          </div>
+          <div class="pajangan-foot">
+            <div class="pajangan-foot__front face"> </div>
+            <div class="pajangan-foot__back face"> </div>
+            <div class="pajangan-foot__right face"> </div>
+            <div class="pajangan-foot__left face"> </div>
+            <div class="pajangan-foot__top face"> </div>
+            <div class="pajangan-foot__bottom face"> </div>
+          </div>
+          <div class="pajangan-handl">
+            <div class="pajangan-handl__front face"> </div>
+            <div class="pajangan-handl__back face"> </div>
+            <div class="pajangan-handl__right face"> </div>
+            <div class="pajangan-handl__left face"> </div>
+            <div class="pajangan-handl__top face"> </div>
+            <div class="pajangan-handl__bottom face"> </div>
+          </div>
+          <div class="pajangan-handr">
+            <div class="pajangan-handr__front face"> </div>
+            <div class="pajangan-handr__back face"> </div>
+            <div class="pajangan-handr__right face"> </div>
+            <div class="pajangan-handr__left face"> </div>
+            <div class="pajangan-handr__top face"> </div>
+            <div class="pajangan-handr__bottom face"> </div>
+          </div>
+        </div>
+        <div class="karpet"></div>
+      </div>
+</body>
+</html>
